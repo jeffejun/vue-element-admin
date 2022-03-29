@@ -56,6 +56,12 @@ export const constantRoutes = [
     hidden: true
   },
   {
+    path: '/mapDemo',
+    component: () => import('@/views/map/index'),
+    hidden: true
+  },
+
+  {
     path: '/auth-redirect',
     component: () => import('@/views/login/auth-redirect'),
     hidden: true
@@ -95,6 +101,19 @@ export const constantRoutes = [
       }
     ]
   },
+  {
+    path: '/map',
+    component: Layout,
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/map/index'),
+        name: 'Map',
+        meta: { title: 'Map', icon: 'wan_map', affix: false }
+      }
+    ]
+  },
+
   {
     path: '/guide',
     component: Layout,
